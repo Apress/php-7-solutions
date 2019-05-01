@@ -1,0 +1,275 @@
+/* Styles defined in the body remove any default margin or padding on the page.
+ * Some browsers add margin, others add padding, so setting them both to zero means the page offset looks the same in all browsers.
+ * The background rule sets the page background to white with the image of Mount Fuji in the top left.
+ * The background image also contains the main page heading in both Japanese and English.
+ * The text is set to a very dark gray, which is easier on the eyes than black.
+ * The font-family applies to all text on the page, except where specifically overridden by other rules. */
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	overflow-y:scroll;
+	background-color: #EAE2D7;
+}
+
+/* All margins are removed from h1 and h2 tags, except for the bottom margin, which is set to 10px.
+ * The main font-family is reset to Verdana, which looks better for titles, and the color is reset to a dark blue.
+ */
+
+h1, h2 {
+    margin: 0 0 10px 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #036;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+/* Paragraphs have the left and top margins reduced to zero. The auto rule leaves the right margin untouched, 
+ * while the bottom margin is set to 1em. The default font size is reduced, and the spacing between lines increased
+ * for greater readability. */
+
+p {
+    margin: 0 auto 1em 0;
+    padding: 0 20px;
+    font-size: 85%;
+    line-height: 1.4;
+}
+
+/* Because the page heading "Japan Journey" is embedded in the background image, the page needs an HTML heading
+ * that won't appear on screen. This makes the page more user-friendly to search engines and screen readers.
+ * By setting the position as absolute with a top of minus 100px, the page heading is safely moved offscreen. */
+
+header {
+    position: absolute;
+    top: -100px;
+}
+
+/* The wrapper div wraps the rest of the page content and adds a 90px top margin so that it clears the "Japan Journey"
+ * page title in the background image. */
+
+#wrapper {
+	padding:90px 0 45px;
+	background: #fff url(../images/fuji.jpg) top left no-repeat;
+	width:900px;
+	margin:0 auto;
+	position:relative;
+	border-left: 1px solid #A4C8D8;
+	border-right: 1px solid #A4C8D8;
+	min-height:490px;
+}
+
+/* The navigation menu is contained in an absolutely positioned div 140px from the top of the page and 60px from the left margin. */
+
+nav {
+    position: absolute;
+    top: 140px;
+    left: 60px;
+    width: 90px;
+}
+
+/* Styles for the navigation menu. */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    width: 100px;
+    padding-left: 10px;
+    margin: 3px 0;
+    text-decoration: none;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+nav a:link, nav a:visited {
+    border-left: #00425E solid 10px;
+    color: #00425E;
+}
+
+nav a:hover, nav a:active {
+    border-left-color: #fff;
+    background-color: #00425E;
+    color: #fff;
+}
+
+/* The here ID identifies the current page and applies a white stripe to the left as a visual indicator. */
+
+a#here {
+    border-left-color: #fff !important;
+    background-color: transparent !important;
+    color: #0074A5 !important;
+}
+
+/* The maincontent div has zero top and bottom margins. The right margin is 10% of page width to give breathing space on the right.
+ * The left margin is set at 190px to make room for the navigation menu. Minimum and maximum widths are set to keep the layout flexible. */
+
+main {
+    margin: 0 10% 0 190px;
+    min-width: 525px;
+    max-width: 640px;
+}
+
+/* Styles for links in the maincontent div. */
+
+main a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 4px;
+}
+
+main a:link, main a:visited {
+    color: #00425E;
+    border-bottom: #00425E dashed 1px;
+}
+
+main a:hover, main a:active {
+    color: #fff;
+    background-color: #00425E;
+    border-bottom: none;
+}
+
+/* The figure is for the random image on the front page. It floats to the right with a 20px right margin and a 10px left one. */
+
+figure {
+    float: right;
+    margin: 0 20px 0 10px;
+}
+
+/* Border and background color for the random image. */
+
+figure img {
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 15px #999999;
+    box-shadow: 1px 1px 15px #999999;
+}
+
+/* The caption on the front page is bold and centered. */
+
+figcaption {
+    margin: 0;
+    padding: 3px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* The footer needs to appear below anything that is floated, so clear: both is added to the rule. */
+
+footer {
+	clear: both;
+	background-color: #A4C8D8;
+	color: #FFF;
+	padding:12px;
+	width:876px;
+	position:absolute;
+	bottom:0;
+}
+
+footer p {
+	margin-bottom:0;
+	font-size: 90%;
+	font-weight:bold;
+}
+
+/* Styles for the contact form. */
+
+form {
+    margin: 0 0 0 20px;
+}
+
+form h2 {
+    color: #036;
+    font-size: 80%;
+    font-weight: bold;
+    margin: 0 0 5px 10px;
+}
+
+form p {
+    margin: 0 0 5px 0;
+}
+
+input[type="text"], input[type="email"] {
+    width: 250px;
+}
+
+textarea {
+    width: 500px;
+    height: 125px;
+}
+
+fieldset {
+    border: none;
+}
+
+/* Setting display to block forces the label for each form element onto a line of its own. */
+
+label {
+    font-weight: bold;
+    color: #036;
+    display: block;
+}
+
+/* This needs to be overridden for the subscribe, interests, and terms labels, so display is reset to inline. */
+
+#subscribe label, #interests label, label[for="terms"] {
+    display: inline;
+    padding: 0 20px 0 3px;
+}
+
+#interests div {
+    float: left;
+}
+
+/* The warning class makes the error messages on the feedback form bold and red. */
+
+.warning {
+    font-weight: bold;
+    color: #f00;
+}
+
+/* Styles for the image gallery. */
+
+#picCount {
+  color:#00425E;
+  font-weight:bold;
+  }
+
+#thumbs {
+    float: left;
+    margin-top: 10px;
+}
+
+#thumbs td {
+    text-align: center;
+}
+
+#thumbs img {
+    border: none;
+	display:block;
+}
+
+#thumbs a:link, #thumbs a:visited, #thumbs a:hover, #thumbs a:active {
+    border: none;
+    padding: 0;
+}
+
+#main_image {
+    float: right;
+    text-align: center;
+    width: 350px;
+}
+
+#main_image p {
+   color:#00425E;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}

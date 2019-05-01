@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#fff;
+	color:#000;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+h1 {
+	font-size:150%;
+	margin-left:20px;
+	color:#A51306;
+}
+h2 {
+	font-size:100%;
+	margin-left:50px;
+	margin-bottom:3px;
+}
+a {
+	color:#1F4F82;
+}
+a:link, a:visited {
+	text-decoration:none;
+}
+a:hover, a:active, a:focus {
+	text-decoration:underline;
+}
+.datetime {
+	font-size: 70%;
+	margin: 0 auto 5px 80px;
+}
+p {
+	font-size:90%;
+	margin:5px auto 10px 50px;
+	width:400px;
+}
